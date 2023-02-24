@@ -30,8 +30,8 @@
           <td>{{ $show->id }}</td>
           <td>{{ $show->namaproduk }}</td>
           <td>{{ $show->deskripsi }}</td>
-          <td>{{ $show->harga }}</td>
-          <td><img src="{{ Storage::url($show->gambar) }}" alt="{{ $show->namaproduk }}" width="150" class="img-thumbnail"></td>
+          <td>Rp. {{ number_format($show->harga, '0', ',', ',') }}</td>
+          <td><img src="{{ Storage::url($show->gambar) }}" alt="{{ $show->namaproduk }}" width="100" class="img-thumbnail"></td>
           <td>
             <a href="/products/{{ $show->id }}/edit" class="btn btn-sm btn-warning">Edit</a> 
             <form action="/products/{{ $show->id }}" method="POST" class="d-inline">

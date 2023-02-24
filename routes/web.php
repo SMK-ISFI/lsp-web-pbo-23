@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [UserController::class, 'index'])->name('login');
-Route::get('/register', [UserController::class, 'register']);
-Route::post('/register-proses', [UserController::class, 'register_proses']);
-Route::post('/login-proses', [UserController::class, 'login_proses']);
-Route::post('/logout', [UserController::class, 'logout']);
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register-proses', [RegisterController::class, 'register_proses']);
+Route::post('/login-proses', [LoginController::class, 'login_proses']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
