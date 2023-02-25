@@ -43,7 +43,7 @@ body, html {
 
 
 .bg-custom {
-  background-color: #6675DF;
+  background-color: #01D28E;
 }
 
 .text-custom {
@@ -56,12 +56,12 @@ body, html {
 }
 
 .btn-custom {
-  background-color: #6675DF;
+  background-color: #01D28E;
   color: #fff;
   transition: 0.5s ease;
 }
 
 .btn-custom:hover {
-  background-color: #4d58ac;
+  background-color: #008d5e;
   color: #fff;
 }
