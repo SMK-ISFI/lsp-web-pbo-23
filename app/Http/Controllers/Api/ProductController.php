@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,6 +20,7 @@ class ProductController extends Controller
     public function index()
     {
         try {
+            Log::info("user sedang menampilkan semua data produk");
             return response()->json([
                 'data' => Product::select('id', 'namaproduk', 'deskripsi', 'harga', 'gambar')->get()
             ], 200);
@@ -67,6 +69,7 @@ class ProductController extends Controller
                 'gambar' => $gambar,
             ]);
 
+            Log::info("user sedang menambahkan data produk");
             return response()->json([
                 'status' => 'berhasil',
                 'data'  => $data
@@ -88,6 +91,7 @@ class ProductController extends Controller
     public function show($id)
     {
         try {
+            Log::info("user sedang menampilkan data produk id=$id");
             return response()->json([
                 'data' => Product::select('id', 'namaproduk', 'deskripsi', 'harga', 'gambar')
                             ->where('id', $id)->first()
@@ -136,6 +140,7 @@ class ProductController extends Controller
                 'harga' => $request->harga
             ]);
 
+            Log::info("user sedang mengedit data produk");
             return response()->json([
                 'status' => 'update berhasil',
             ], 201);
@@ -164,6 +169,7 @@ class ProductController extends Controller
 
             $product->delete();
 
+            Log::info("user sedang menghapus data produk");
             return response()->json([
                 'status' => 'hapus berhasil',
             ], 200);

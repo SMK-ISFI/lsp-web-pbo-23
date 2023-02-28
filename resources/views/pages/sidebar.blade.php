@@ -14,9 +14,9 @@
     </ul>
     <hr/>
     <div class="dropdown pb-4">
-      <form action="/logout" method="POST" class="d-flex align-items-center text-custom text-decoration-none">
+      <form action="/logout" method="POST">
         @csrf
-        <button type="submit" class="nav-link px-3 bg-transparent border-0">
+        <button type="submit" class="d-flex align-items-center text-custom text-decoration-none bg-transparent border-0">
           <span class="d-none d-sm-inline mx-1">Logout</span>
         </button>
       </form>
